@@ -19,13 +19,21 @@ El código se encuentra disponible en
 ```
 src/controllers/controllers/competition.py
 ```
-Este tiene las siguientes partes:
-**`__init__`**  Se crean dentro de esta los subscribers `/scan` del LiDAR, `/ego_racecar/odom` del Odómetro y el publisher (`/drive`). Además se establecen variables internas de la clase RaceFTG.
+Este código tiene los siguientes elementos:
 
-**`odom_callback`**  Función que registra la posición del vehiculo y determina el tiempo de vueltas y total del vehículo.
+**`__init__`**. Se crean dentro de esta los subscribers `/scan` del LiDAR, `/ego_racecar/odom`. del Odómetro y el publisher (`/drive`). Además se establecen variables internas de la clase RaceFTG.
 
-**`lidar_callback`** Función que determina el objetivo dentro de los subarreglos tratados según el caso y publica la velocidad y ángulo de giro de las ruedas basado en la distancia del objetivo.
+**`odom_callback`**.  Función que registra la posición del vehiculo y determina el tiempo de vueltas y total del vehículo.
 
-**`max_distance_chain`** Funci
+**`lidar_callback`**. Función que determina el objetivo dentro de los subarreglos tratados según el caso y publica la velocidad y ángulo de giro de las ruedas basado en la distancia del objetivo.
+
+**`max_distance_chain`**. Función que determina el arreglo que tenga la distancia máxima dentro de un conjunto de un subarreglos.
+
+**`find_longest_chain`**. Función que determina el arreglo con longitud más larga dentro de un conjunto de un subarreglos.
+
+**`get_wide_arrays`**. Función que determina subarreglos dentro de un subarreglo, cuyos elementos se encuentran en un ángulo de barrido de 30º.
+
+**`main`**. Ejecuta el programa dentro del terminal. Contiene un objeto de la clase RaceFTG.
+
 
 
