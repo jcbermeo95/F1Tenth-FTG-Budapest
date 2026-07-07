@@ -11,4 +11,21 @@ El enfoque del controlador utilizado en el vehìculo es una modificaciòn del FT
 
 **4. Elección del objetivo** Se realiza la selección de un subarreglo basado en casos: Si existen subarreglos que se encuentren dentro de un barrido angular de 30º, se lo agrega a un nuevo arreglo. A partir de allí, se selecciona el punto medio. Caso contrario, se selecciona el arreglo que tenga el valor máximo dentro de los subarreglos disponibles y se selecciona su punto medio.
 
+**5. Selección de las velocidades lineales y ángulos de giro.** Basado en la distancia del objetivo, se establece distintas velocidades lineales y ángulos de giro controlados.
+
+## Organizaciòn del código##
+
+El código se encuentra disponible en
+```
+src/controllers/controllers/competition.py
+```
+Este tiene las siguientes partes:
+**`__init__`**  Se crean dentro de esta los subscribers `/scan` del LiDAR, `/ego_racecar/odom` del Odómetro y el publisher (`/drive`). Además se establecen variables internas de la clase RaceFTG.
+
+**`odom_callback`**  Función que registra la posición del vehiculo y determina el tiempo de vueltas y total del vehículo.
+
+**`lidar_callback`** Función que determina el objetivo dentro de los subarreglos tratados según el caso y publica la velocidad y ángulo de giro de las ruedas basado en la distancia del objetivo.
+
+**`max_distance_chain`** Funci
+
 
