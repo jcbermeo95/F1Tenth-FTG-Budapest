@@ -65,3 +65,20 @@ pip3 install -e
 ```
 ### 3. Clona el repositorio
 Clona el repositorio:
+
+### 4. Instalar dependencias de ROS2
+Instala las dependencias:
+
+```bash
+cd ~/F1Tenth-Repository
+sudo apt install python3-rosdep2
+rosdep update
+rosdep install -i --from-path src --rosdistro humble -y
+```
+### 5. Compilar el espacio de trabajo.
+Instala el programa:
+
+```bash
+colcon build
+source install/setup.bash
+```
