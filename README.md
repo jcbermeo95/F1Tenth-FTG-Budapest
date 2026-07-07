@@ -83,15 +83,23 @@ colcon build
 source install/setup.bash
 ```
 
-Abre `src/f1tenth_gym_ros/config/sim.yaml` y cambia tu usario y la ruta del mapa por :
+Abre `src/f1tenth_gym_ros/config/sim.yaml` y cambia tu usuario y la ruta del mapa por :
 
 ```yaml
 map_path: '/home/<tu_usuario>/F1Tenth-Repository/src/f1tenth_gym_ros/maps/Budapest_map'
 ```
 ## Ejecución
 
-Abre la terminal y ejecuta el siguiente comando.
+Modifica la posición inicial del vehículo en el archivo sim.yaml de la siguiente manera:
 
+
+Abre la terminal y ejecuta el siguiente comando.
+```bash
+# ego starting pose on map
+    sx: 0.0
+    sy: 0.0
+    stheta: -0.702474197
+```
 
 ```bash
 cd ~/F1Tenth-Repository
