@@ -13,7 +13,7 @@ El enfoque del controlador utilizado en el vehìculo es una modificaciòn del FT
 
 **5. Selección de las velocidades lineales y ángulos de giro.** Basado en la distancia del objetivo, se establece distintas velocidades lineales y ángulos de giro controlados.
 
-## Organizaciòn del código##
+## Organizaciòn del código
 
 El código se encuentra disponible en
 ```
