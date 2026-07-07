@@ -33,7 +33,7 @@ Funciones:
 
 **`odom_callback`**.  Función que registra la posición del vehiculo y determina el tiempo de vueltas y total del vehículo.
 
-**`lidar_callback`**. Función que determina el objetivo dentro de los subarreglos tratados según el caso y publica la velocidad y ángulo de giro de las ruedas basado en la distancia del objetivo.
+**`lidar_callback`**. Función que determina el objetivo dentro de los subarreglos tratados según el caso y publica la velocidad y ángulo de giro de las ruedas basado en la distancia del objetivo. Para modificar el movimiento del vehículo se recomienda modificar las variables `self.safety_bubble`,`drive_msg.drive.speed` y `steering_angle`.
 
 **`max_distance_chain`**. Función que determina el arreglo que tenga la distancia máxima dentro de un conjunto de un subarreglos.
 
@@ -92,14 +92,15 @@ map_path: '/home/<tu_usuario>/F1Tenth-Repository/src/f1tenth_gym_ros/maps/Budape
 
 Modifica la posición inicial del vehículo en el archivo sim.yaml de la siguiente manera:
 
-
-Abre la terminal y ejecuta el siguiente comando.
 ```bash
 # ego starting pose on map
     sx: 0.0
     sy: 0.0
     stheta: -0.702474197
 ```
+
+Abre la terminal y ejecuta el siguiente comando.
+
 
 ```bash
 cd ~/F1Tenth-Repository
