@@ -66,6 +66,11 @@ pip3 install -e
 ### 3. Clona el repositorio
 Clona el repositorio:
 
+```bash
+cd $HOME
+git clone https://github.com/jcbermeo95/F1Tenth-FTG-Budapest.git F1Tenth-Repository
+```
+
 ### 4. Instalar dependencias de ROS2
 Instala las dependencias:
 
@@ -82,6 +87,9 @@ Instala el programa:
 colcon build
 source install/setup.bash
 ```
+
+### 5. Descargar y cambiar el mapa.
+Descarga el mapa Budapest_map y su respecto archivo yaml dentro de la carpeta `src`.
 
 Abre `src/f1tenth_gym_ros/config/sim.yaml` y cambia tu usuario y la ruta del mapa por :
 
