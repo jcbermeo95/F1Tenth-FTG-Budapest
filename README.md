@@ -24,7 +24,7 @@ Este código tiene los siguientes elementos:
 Tòpicos usados:
 
 `/scan` (`sensor_msgs/LaserScan`). Detecta datos del LiDAR.
-`/ego_racecar/odom` (`nav_msgs/Odometry`). Obtiene posición del vehículo para determinar tiempos de vuelta y total. 
+`/ego_racecar/odom` (`nav_msgs/Odometry`). Obtiene posición del vehículo para determinar tiempos de vuelta y total. El cronómetro determina el tiempo de vueltas cuando el vehículo cruza la posición X=0.
 `/drive` (`ackermann_msgs/AckermannDriveStamped`). Envía datos para mover el vehículo.
 
 Funciones:
@@ -82,3 +82,31 @@ Instala el programa:
 colcon build
 source install/setup.bash
 ```
+
+Abre `src/f1tenth_gym_ros/config/sim.yaml` y cambia tu usario y la ruta del mapa por :
+
+```yaml
+map_path: '/home/<tu_usuario>/F1Tenth-Repository/src/f1tenth_gym_ros/maps/Budapest_map'
+```
+## Ejecución
+
+Abre la terminal y ejecuta el siguiente comando.
+
+
+```bash
+cd ~/F1Tenth-Repository
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+```
+
+En otra terminal ejecuta el siguiente comando
+
+```bash
+cd ~/F1Tenth-Repository
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 run controllers competition
+```
+
+
