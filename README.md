@@ -71,6 +71,14 @@ cd F1Tenth-Repository/src/controllers/controllers
 colcon build
 chmod +x competition.py
 ```
+Modifica la posición inicial del vehículo en el archivo sim.yaml de la siguiente manera:
+
+```bash
+# ego starting pose on map
+    sx: 0.0
+    sy: 0.0
+    stheta: -0.702474197
+```
 
 ### 4. Cambiar el mapa.
 
@@ -101,32 +109,24 @@ tests_require=['pytest'],
 
 ## Ejecución
 
-Modifica la posición inicial del vehículo en el archivo sim.yaml de la siguiente manera:
-
-```bash
-# ego starting pose on map
-    sx: 0.0
-    sy: 0.0
-    stheta: -0.702474197
-```
 
 Abre la terminal y ejecuta el siguiente comando.
 
 
 ```bash
 cd ~/F1Tenth-Repository
-source /opt/ros/humble/setup.bash
 source install/setup.bash
+colcon build
 ros2 launch f1tenth_gym_ros gym_bridge_launch.py
 ```
 
-En otra terminal ejecuta el siguiente comando
+En otra ventana del terminal ejecuta el siguiente comando
 
 ```bash
-cd ~/F1Tenth-Repository
-source /opt/ros/humble/setup.bash
 source install/setup.bash
 ros2 run controllers competition
 ```
+
+El tiempo se mostrará al ejecutar el archivo de competition.py dado por este último comando. Aproximadamente se espera un tiempo promedio de cada vuelta de 43s. En caso de que el vehículo choque debido a variaciones de mediciones del LiDAR u otro asuntos cierre toda la terminal y ejecute los últimos dos pasos del comando. No se recomienda cambio de vista, debido que esto produce crasheo del sistema. 
 
 
