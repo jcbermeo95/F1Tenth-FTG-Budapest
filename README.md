@@ -54,48 +54,51 @@ source /opt/ros/humble/setup.bash
 ```
 
 ### 2. Instalar F1Tenth Gym
-Instala el programa:
+Seguir la guía de instalación de ROS 2 Humble y dado en:
 
 ```bash
-source /opt/ros/humble/setup.bash
-cd $HOME
-git clone [https://github.com/f1tenth/f1tenth_gym](https://github.com/f1tenth/f1tenth_gym)
-cd f1tenth_gym
-pip3 install -e 
+https://github.com/widegonz/F1Tenth-Repository
 ```
-### 3. Clona el repositorio
-Clona el repositorio:
+Asegúrate de seguir los pasos correctamente.
 
+### 3. Descargar la carpeta src/controllers del repositorio.
+
+Descarga la carpeta src/controllers dentro de este repositorio. Copie el archivo competition.py dentro de src/controllers/controllers a la carpeta respectiva de home/F1Tenth-Repository/src/controllers/controllers y péguelo dentro de dicha carpeta con los demás documentos con extensión de Python. 
+
+Use el siguiente comando en el terminal para que el archivo.py se pueda ejecutar:
 ```bash
-cd $HOME
-git clone https://github.com/jcbermeo95/F1Tenth-FTG-Budapest.git F1Tenth-Repository
-```
-
-### 4. Instalar dependencias de ROS2
-Instala las dependencias:
-
-```bash
-cd ~/F1Tenth-Repository
-sudo apt install python3-rosdep2
-rosdep update
-rosdep install -i --from-path src --rosdistro humble -y
-```
-### 5. Compilar el espacio de trabajo.
-Instala el programa:
-
-```bash
+cd F1Tenth-Repository/src/controllers/controllers
 colcon build
-source install/setup.bash
+chmod +x competition.py
 ```
 
-### 5. Descargar y cambiar el mapa.
-Descarga el mapa Budapest_map y su respecto archivo yaml dentro de la carpeta `src`.
+### 4. Cambiar el mapa.
 
-Abre `src/f1tenth_gym_ros/config/sim.yaml` y cambia tu usuario y la ruta del mapa por :
+Descarga el mapa Budapest_map y Budapest_map_obstacle con extensiones png y sus respecto archivos yaml dentro de la carpeta `src/controllers/maps` del repositorio de esta página y péguelos en la carpeta de home/F1Tenth-Repository/src/f1tenth_gym_ros/maps. 
+Abre `src/f1tenth_gym_ros/config/sim.yaml` y cambia la ruta del mapa para la carrera sin obstáculo en Budapest por :
 
 ```yaml
 map_path: '/home/<tu_usuario>/F1Tenth-Repository/src/f1tenth_gym_ros/maps/Budapest_map'
 ```
+y la mapa de la carrera con obstáculo por 
+
+```yaml
+map_path: '/home/<tu_usuario>/F1Tenth-Repository/src/f1tenth_gym_ros/maps/Budapest_map_obstacle'
+```
+### 5. Añade el respectivo del archivo para ejecutar.
+
+Añade el nombre del respectivo archivo competition en el archivo setup.py ubicado en home/F1Tenth-Repository/src/controllers
+
+```bash
+...
+tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'competition = controllers.competition:main',
+...
+```
+
+
 ## Ejecución
 
 Modifica la posición inicial del vehículo en el archivo sim.yaml de la siguiente manera:
