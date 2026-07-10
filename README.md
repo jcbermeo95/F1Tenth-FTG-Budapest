@@ -1,5 +1,15 @@
 # Tutorial F1Tenth-FTG-Budapest
 Controlador FTG en F1Tenth. Proyecto primer parcial
+## Revisión de videos:
+
+El enlace para ver el video de la parte 1 (sin obstáculos) es:
+
+https://www.youtube.com/watch?v=ukQooMGJNVA
+
+El enlace para ver el video de la parte 2 (con obstáculos estáticos) es:
+
+https://www.youtube.com/watch?v=XnxKHXf3cHQ
+
 ## Enfoque del controlador (Follow the Gap FTG)
 El enfoque del controlador utilizado en el vehìculo es una modificaciòn del FTG, dado que posee la siguiente estructura base:
 
