@@ -140,6 +140,8 @@ ros2 run controllers competition
 El tiempo se mostrará al ejecutar el archivo de competition.py dado por este último comando. Aproximadamente se espera un tiempo promedio de cada vuelta de 43s. En caso de que el vehículo choque debido a variaciones de mediciones del LiDAR u otro asuntos cierre toda la terminal y ejecute los últimos dos pasos del comando. No se recomienda cambio de vista, debido que esto produce crasheo del sistema. 
 NOTA: No se ha realizado la simulación en F1Tenth para 2 o más vehículos.
 
+NOTA 2: El vehiculo tiene velocidades entre 9 a 10 m/s.
+
 Autor: Julio Bermeo
 
 
